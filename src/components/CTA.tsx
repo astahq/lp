@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 
 const CTA = () => {
   return (
@@ -11,24 +10,17 @@ const CTA = () => {
             Ready to save on legal pack reviews?
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Join 300+ UK property investors already on the waitlist. Get early access and 1 month free.
+            Join 300+ UK property investors already using us!
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6">
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              className="h-12 rounded-lg px-4 bg-card border-border text-base flex-1"
-            />
-            <Button className="h-12 rounded-lg px-6 text-sm font-medium">
-              Get Early Access
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Button className="h-12 rounded-lg px-8 text-sm font-medium">
+              Get Started for Free
+            </Button>
+            <Button variant="outline" className="h-12 rounded-lg px-8 text-sm font-medium">
+              Request Demo
             </Button>
           </div>
-
-          <p className="text-sm text-muted-foreground">
-            Asta does not give legal advice. It is an AI-powered due-diligence
-            tool that helps you screen and shortlist properties faster.
-          </p>
         </div>
       </div>
     </section>
