@@ -14,11 +14,15 @@ const Header = () => {
           <a href="/pricing" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
             Pricing
           </a>
-          <Button variant="ghost" className="text-sm font-medium text-muted-foreground hover:text-foreground">
-            Request demo
+          <Button variant="ghost" className="text-sm font-medium text-muted-foreground hover:text-foreground" asChild>
+            <a href="https://cal.com/sefa-oruc-asta/15min?overlayCalendar=true" target="_blank" rel="noopener noreferrer">
+              Request demo
+            </a>
           </Button>
-          <Button className="rounded-lg px-6 h-10 text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90">
-            Review your Property for Free
+          <Button className="rounded-lg px-6 h-10 text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90" asChild>
+            <a href="https://app.useasta.com/auth" target="_blank" rel="noopener noreferrer">
+              Review your Property for Free
+            </a>
           </Button>
         </div>
       </div>

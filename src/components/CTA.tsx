@@ -12,11 +12,15 @@ const CTA = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button className="h-12 rounded-lg px-8 text-sm font-medium">
-              Get Started for Free
+            <Button className="h-12 rounded-lg px-8 text-sm font-medium" asChild>
+              <a href="https://app.useasta.com/auth" target="_blank" rel="noopener noreferrer">
+                Get Started for Free
+              </a>
             </Button>
-            <Button variant="outline" className="h-12 rounded-lg px-8 text-sm font-medium">
-              Request Demo
+            <Button variant="outline" className="h-12 rounded-lg px-8 text-sm font-medium" asChild>
+              <a href="https://cal.com/sefa-oruc-asta/15min?overlayCalendar=true" target="_blank" rel="noopener noreferrer">
+                Request Demo
+              </a>
             </Button>
           </div>
         </div>

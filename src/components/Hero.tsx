@@ -16,8 +16,10 @@ const Hero = () => {
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">Asta reads all property documents and highlights red flags, restrictive covenants, and key clauses before you bid.</p>
 
             <div className="mb-6">
-              <Button className="h-12 rounded-lg px-6 text-sm font-medium">
-                Try for Free
+              <Button className="h-12 rounded-lg px-6 text-sm font-medium" asChild>
+                <a href="https://app.useasta.com/auth" target="_blank" rel="noopener noreferrer">
+                  Try for Free
+                </a>
               </Button>
             </div>
 
