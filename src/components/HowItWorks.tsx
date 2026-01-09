@@ -41,22 +41,22 @@ const HowItWorks = () => {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {steps.map((step, index) => (
             <div key={index} className="relative">
               <div className="bg-card rounded-xl overflow-hidden border border-border h-full">
-                <div className="aspect-video w-full overflow-hidden">
+                <div className="aspect-[4/3] w-full overflow-hidden">
                   <img
                     src={step.image}
                     alt={step.title}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                <div className="p-8">
+                  <h3 className="text-xl font-semibold text-foreground mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-muted-foreground text-base leading-relaxed">
                     {step.description}
                   </p>
                 </div>
