@@ -45,11 +45,11 @@ const HowItWorks = () => {
           {steps.map((step, index) => (
             <div key={index} className="relative">
               <div className="bg-card rounded-xl overflow-hidden border border-border h-full">
-                <div className="aspect-[4/3] w-full overflow-hidden">
+              <div className="w-full overflow-hidden bg-muted/30" style={{ aspectRatio: '169/100' }}>
                   <img
                     src={step.image}
                     alt={step.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 <div className="p-8">
