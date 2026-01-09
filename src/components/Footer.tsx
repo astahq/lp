@@ -47,9 +47,8 @@ const Footer = () => {
             <span className="text-sm text-background/40">Built in London</span>
           </div>
           <div className="flex items-center gap-6 text-sm text-background/60">
-            <a href="#" className="hover:text-background transition-colors">Twitter</a>
-            <a href="#" className="hover:text-background transition-colors">LinkedIn</a>
-            <a href="#" className="hover:text-background transition-colors">GitHub</a>
+            <a href="https://x.com/useastahq" target="_blank" rel="noopener noreferrer" className="hover:text-background transition-colors">Twitter</a>
+            <a href="https://www.linkedin.com/company/astahq/" target="_blank" rel="noopener noreferrer" className="hover:text-background transition-colors">LinkedIn</a>
           </div>
         </div>
       </div>
