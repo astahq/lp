@@ -45,6 +45,9 @@ const Hero = () => {
           <div className="card-shadow rounded-xl overflow-hidden bg-card border border-border">
             <img src={dashboardImage} alt="Asta Dashboard Preview" className="w-full h-auto" />
           </div>
+          <p className="text-center text-sm text-muted-foreground mt-4">
+            Asta does not give legal advice. It is an AI-powered due diligence tool that helps you screen and shortlist properties more efficiently.
+          </p>
         </div>
       </div>
     </section>;
