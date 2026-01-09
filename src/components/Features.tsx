@@ -64,8 +64,10 @@ const Features = () => {
           </div>}
 
         <div className="mt-12 text-center">
-          <Button className="h-12 rounded-lg px-8 text-sm font-medium">
-            Get Started for Free
+          <Button className="h-12 rounded-lg px-8 text-sm font-medium" asChild>
+            <a href="https://app.useasta.com/auth" target="_blank" rel="noopener noreferrer">
+              Get Started for Free
+            </a>
           </Button>
         </div>
       </div>

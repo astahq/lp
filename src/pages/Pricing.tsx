@@ -98,8 +98,10 @@ const Pricing = () => {
                   </ul>
                 </div>
 
-                <Button className="w-full h-12 rounded-lg text-sm font-medium">
-                  Get Started for Free
+                <Button className="w-full h-12 rounded-lg text-sm font-medium" asChild>
+                  <a href="https://app.useasta.com/auth" target="_blank" rel="noopener noreferrer">
+                    Get Started for Free
+                  </a>
                 </Button>
               </CardContent>
             </Card>
@@ -131,8 +133,10 @@ const Pricing = () => {
                   </ul>
                 </div>
 
-                <Button variant="outline" className="w-full h-12 rounded-lg text-sm font-medium">
-                  Book a Demo
+                <Button variant="outline" className="w-full h-12 rounded-lg text-sm font-medium" asChild>
+                  <a href="https://cal.com/sefa-oruc-asta/15min?overlayCalendar=true" target="_blank" rel="noopener noreferrer">
+                    Book a Demo
+                  </a>
                 </Button>
               </CardContent>
             </Card>
