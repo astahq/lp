@@ -62,6 +62,12 @@ const Features = () => {
               />
             </div>
           </div>}
+
+        <div className="mt-12 text-center">
+          <Button className="h-12 rounded-lg px-8 text-sm font-medium">
+            Get Started for Free
+          </Button>
+        </div>
       </div>
     </section>;
 };
