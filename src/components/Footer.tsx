@@ -10,9 +10,15 @@ const Footer = () => {
               <img src={astaLogo} alt="Asta" className="h-7 w-7" />
               <span className="text-lg font-semibold">Asta</span>
             </div>
-            <p className="text-sm text-background/60 leading-relaxed">
+            <p className="text-sm text-background/60 leading-relaxed mb-4">
               AI-powered legal pack analysis for UK property investors.
             </p>
+            <address className="text-sm text-background/60 leading-relaxed not-italic">
+              71-75 Shelton Street<br />
+              Covent Garden<br />
+              London<br />
+              WC2H 9JQ
+            </address>
           </div>
 
           <div>
