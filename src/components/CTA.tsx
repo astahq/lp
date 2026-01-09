@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
-
 const CTA = () => {
-  return (
-    <section className="py-20 md:py-28 bg-background">
+  return <section className="py-20 bg-background md:py-[70px]">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <span className="section-label mb-3 block">GET STARTED</span>
@@ -23,8 +21,6 @@ const CTA = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CTA;

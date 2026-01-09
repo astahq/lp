@@ -1,6 +1,5 @@
 const Quote = () => {
-  return (
-    <section className="py-16 md:py-24 bg-background">
+  return <section className="py-16 bg-background md:py-[70px]">
       <div className="container mx-auto px-4">
         <blockquote className="max-w-4xl mx-auto text-center">
           <p className="text-xl md:text-2xl lg:text-3xl text-foreground font-medium leading-relaxed">
@@ -17,8 +16,6 @@ const Quote = () => {
           </footer>
         </blockquote>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Quote;
