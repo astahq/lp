@@ -60,8 +60,10 @@ const Features = () => {
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 {activeFeature.description}
               </p>
-              <Button variant="link" className="p-0 h-auto text-primary font-medium">
-                Upload Your Legal Pack →
+              <Button variant="link" className="p-0 h-auto text-primary font-medium" asChild>
+                <a href="https://app.useasta.com/auth" target="_blank" rel="noopener noreferrer">
+                  Upload Your Legal Pack →
+                </a>
               </Button>
             </div>
             <div className="bg-muted rounded-2xl overflow-hidden shadow-lg border border-border">
