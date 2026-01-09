@@ -42,8 +42,8 @@ const Features = () => {
         </div>
 
         {/* Content */}
-        {activeFeature && <div className="grid lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
-            <div>
+        {activeFeature && <div className="max-w-6xl mx-auto">
+            <div className="mb-8">
               <h3 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
                 {activeFeature.title}
               </h3>
@@ -54,11 +54,11 @@ const Features = () => {
                 Upload Your Legal Pack →
               </Button>
             </div>
-            <div className="bg-muted rounded-xl overflow-hidden">
+            <div className="bg-muted rounded-2xl overflow-hidden shadow-lg border border-border">
               <img 
                 src={activeFeature.image} 
                 alt={activeFeature.title}
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>}
