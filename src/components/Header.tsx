@@ -14,9 +14,6 @@ const Header = () => {
           <a href="/pricing" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
             Pricing
           </a>
-          <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
-            Contact
-          </a>
         </nav>
 
         <div className="flex items-center gap-3">
