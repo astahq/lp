@@ -42,9 +42,9 @@ const Footer = () => {
         <div className="border-t border-background/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
             <p className="text-sm text-background/40">
-              © {new Date().getFullYear()} Asta. All rights reserved.
+              © 2026 Asta. All rights reserved.
             </p>
-            <span className="text-sm text-background/40">Built in London</span>
+            <span className="text-sm text-background/40">Built in London 🎡💂🏼‍♂️🇬🇧</span>
           </div>
           <div className="flex items-center gap-6 text-sm text-background/60">
             <a href="https://x.com/useastahq" target="_blank" rel="noopener noreferrer" className="hover:text-background transition-colors">Twitter</a>
