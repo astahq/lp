@@ -17,11 +17,6 @@ const pricingFaqs = [
       "Each report costs £29 (VAT included). You only pay when you need an analysis - no subscriptions or commitments required. Simply upload your legal pack and receive your comprehensive report within minutes.",
   },
   {
-    question: "What payment methods do you accept?",
-    answer:
-      "We accept all major credit and debit cards including Visa, Mastercard, and American Express. All payments are processed securely through our payment provider.",
-  },
-  {
     question: "Can I get a refund if I'm not satisfied?",
     answer:
       "Yes, we offer a satisfaction guarantee. If you're not happy with your report, contact our support team within 7 days of purchase and we'll review your case for a full refund.",
