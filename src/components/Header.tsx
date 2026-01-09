@@ -11,8 +11,14 @@ const Header = () => {
         </a>
 
         <div className="flex items-center gap-6">
+          <a href="/use-cases" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
+            Use Cases
+          </a>
           <a href="/pricing" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
             Pricing
+          </a>
+          <a href="/contact" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
+            Contact
           </a>
           <Button variant="ghost" className="text-sm font-medium text-muted-foreground hover:text-foreground" asChild>
             <a href="https://cal.com/sefa-oruc-asta/15min?overlayCalendar=true" target="_blank" rel="noopener noreferrer">
