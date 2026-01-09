@@ -35,10 +35,20 @@ const Features = () => {
         </div>
 
         {/* Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {features.map(feature => <button key={feature.id} onClick={() => setActiveTab(feature.id)} className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${activeTab === feature.id ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"}`}>
-              {feature.title}
-            </button>)}
+        <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-12">
+          {features.map((feature, index) => (
+            <div key={feature.id} className="flex flex-col items-center gap-2">
+              <span className="text-xs font-semibold text-primary tracking-wider">
+                STEP {index + 1}
+              </span>
+              <button 
+                onClick={() => setActiveTab(feature.id)} 
+                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${activeTab === feature.id ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"}`}
+              >
+                {feature.title}
+              </button>
+            </div>
+          ))}
         </div>
 
         {/* Content */}
