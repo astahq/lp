@@ -77,29 +77,45 @@ const Pricing = () => {
                   Pay-Per-Report
                 </CardTitle>
                 <p className="text-muted-foreground text-sm mt-2">
-                  Perfect for individual investors who want instant insights before bidding.
+                  Perfect for individual investors who want instant insights
+                  before bidding.
                 </p>
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
-                  <span className="text-4xl font-bold text-foreground">£29</span>
-                  <span className="text-muted-foreground ml-2">(VAT Included)</span>
+                  <span className="text-4xl font-bold text-foreground">
+                    £29
+                  </span>
+                  <span className="text-muted-foreground ml-2">
+                    (VAT Included)
+                  </span>
                 </div>
 
                 <div className="mb-8">
-                  <p className="text-sm font-medium text-foreground mb-4">What's included:</p>
+                  <p className="text-sm font-medium text-foreground mb-4">
+                    What's included:
+                  </p>
                   <ul className="space-y-3">
                     {payPerReportFeatures.map((feature, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground">{feature}</span>
+                        <span className="text-sm text-muted-foreground">
+                          {feature}
+                        </span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <Button className="w-full h-12 rounded-lg text-sm font-medium" asChild>
-                  <a href="https://app.useasta.com/auth" target="_blank" rel="noopener noreferrer">
+                <Button
+                  className="w-full h-12 rounded-lg text-sm font-medium"
+                  asChild
+                >
+                  <a
+                    href="https://app.useasta.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Get Started for Free
                   </a>
                 </Button>
@@ -113,28 +129,43 @@ const Pricing = () => {
                   Enterprise
                 </CardTitle>
                 <p className="text-muted-foreground text-sm mt-2">
-                  Ideal for solicitors, auction houses, property management companies, and high-volume investors needing tailored access.
+                  Ideal for solicitors, auction houses, property management
+                  companies, and high-volume investors needing tailored access.
                 </p>
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
-                  <span className="text-4xl font-bold text-foreground">Custom Pricing</span>
+                  <span className="text-4xl font-bold text-foreground">
+                    Custom Pricing
+                  </span>
                 </div>
 
                 <div className="mb-8">
-                  <p className="text-sm font-medium text-foreground mb-4">What's included:</p>
+                  <p className="text-sm font-medium text-foreground mb-4">
+                    What's included:
+                  </p>
                   <ul className="space-y-3">
                     {enterpriseFeatures.map((feature, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground">{feature}</span>
+                        <span className="text-sm text-muted-foreground">
+                          {feature}
+                        </span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <Button variant="outline" className="w-full h-12 rounded-lg text-sm font-medium" asChild>
-                  <a href="https://cal.com/sefa-oruc-asta/15min?overlayCalendar=true" target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="outline"
+                  className="w-full h-12 rounded-lg text-sm font-medium"
+                  asChild
+                >
+                  <a
+                    href="https://cal.com/sefa-oruc-asta/15min?overlayCalendar=true"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Book a Demo
                   </a>
                 </Button>

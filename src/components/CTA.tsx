@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 const CTA = () => {
-  return <section className="py-20 bg-background md:py-[70px]">
+  return (
+    <section className="py-20 bg-background md:py-[70px]">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <span className="section-label mb-3 block">GET STARTED</span>
@@ -12,19 +13,35 @@ const CTA = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button className="h-12 rounded-lg px-8 text-sm font-medium" asChild>
-              <a href="https://app.useasta.com/auth" target="_blank" rel="noopener noreferrer">
+            <Button
+              className="h-12 rounded-lg px-8 text-sm font-medium"
+              asChild
+            >
+              <a
+                href="https://app.useasta.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Get Started for Free
               </a>
             </Button>
-            <Button variant="outline" className="h-12 rounded-lg px-8 text-sm font-medium" asChild>
-              <a href="https://cal.com/sefa-oruc-asta/15min?overlayCalendar=true" target="_blank" rel="noopener noreferrer">
+            <Button
+              variant="outline"
+              className="h-12 rounded-lg px-8 text-sm font-medium"
+              asChild
+            >
+              <a
+                href="https://cal.com/sefa-oruc-asta/15min?overlayCalendar=true"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Request Demo
               </a>
             </Button>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 export default CTA;

@@ -32,13 +32,28 @@ const Header = () => {
               {link.label}
             </a>
           ))}
-          <Button variant="ghost" className="text-sm font-medium text-muted-foreground hover:text-foreground" asChild>
-            <a href="https://cal.com/sefa-oruc-asta/15min?overlayCalendar=true" target="_blank" rel="noopener noreferrer">
+          <Button
+            variant="ghost"
+            className="text-sm font-medium text-muted-foreground hover:text-foreground"
+            asChild
+          >
+            <a
+              href="https://cal.com/sefa-oruc-asta/15min?overlayCalendar=true"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Request demo
             </a>
           </Button>
-          <Button className="rounded-lg px-6 h-10 text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90" asChild>
-            <a href="https://app.useasta.com/auth" target="_blank" rel="noopener noreferrer">
+          <Button
+            className="rounded-lg px-6 h-10 text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90"
+            asChild
+          >
+            <a
+              href="https://app.useasta.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Review your Property for Free
             </a>
           </Button>
@@ -74,7 +89,11 @@ const Header = () => {
                   Request demo
                 </a>
                 <Button className="rounded-lg mt-4 w-full" asChild>
-                  <a href="https://app.useasta.com/auth" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://app.useasta.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Review your Property for Free
                   </a>
                 </Button>

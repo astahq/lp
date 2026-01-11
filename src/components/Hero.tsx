@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import dashboardImage from "@/assets/dashboard-preview.jpg";
 const Hero = () => {
-  return <section className="hero-gradient pt-28 pb-8 md:pt-36 md:pb-16">
+  return (
+    <section className="hero-gradient pt-28 pb-8 md:pt-36 md:pb-16">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left column - Headlines */}
@@ -13,11 +14,21 @@ const Hero = () => {
 
           {/* Right column - Description and CTA */}
           <div className="max-w-md lg:pt-4">
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">Asta reads all property documents and highlights red flags, restrictive covenants, and key clauses before you bid.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+              Asta reads all property documents and highlights red flags,
+              restrictive covenants, and key clauses before you bid.
+            </p>
 
             <div className="mb-6">
-              <Button className="h-12 rounded-lg px-6 text-sm font-medium" asChild>
-                <a href="https://app.useasta.com/auth" target="_blank" rel="noopener noreferrer">
+              <Button
+                className="h-12 rounded-lg px-6 text-sm font-medium"
+                asChild
+              >
+                <a
+                  href="https://app.useasta.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Try for Free
                 </a>
               </Button>
@@ -43,13 +54,20 @@ const Hero = () => {
         {/* Dashboard preview */}
         <div className="mt-12 max-w-6xl mx-auto">
           <div className="card-shadow rounded-xl overflow-hidden bg-card border border-border">
-            <img src={dashboardImage} alt="Asta Dashboard Preview" className="w-full h-auto" />
+            <img
+              src={dashboardImage}
+              alt="Asta Dashboard Preview"
+              className="w-full h-auto"
+            />
           </div>
           <p className="text-center text-sm text-muted-foreground mt-4">
-            Asta does not give legal advice. It is an AI-powered due diligence tool that helps you screen and shortlist properties more efficiently.
+            Asta does not give legal advice. It is an AI-powered due diligence
+            tool that helps you screen and shortlist properties more
+            efficiently.
           </p>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 export default Hero;
