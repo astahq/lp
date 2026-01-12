@@ -1,18 +1,26 @@
 import { Button } from "@/components/ui/button";
 import dashboardImage from "@/assets/dashboard-preview.jpg";
+import { usePostHog } from "posthog-js/react";
+
 const Hero = () => {
+  const posthog = usePostHog();
+
+  function handleClickTryForFree() {
+    posthog.capture("try_for_free_button_clicked", {
+      button_text: "Try for Free",
+    });
+  }
+
   return (
     <section className="hero-gradient pt-28 pb-8 md:pt-36 md:pb-16">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Left column - Headlines */}
           <div className="max-w-xl">
             <h1 className="text-4xl md:text-5xl lg:text-[56px] text-foreground hero-headline mb-6">
               Instantly analyze and understand property legal packs in the UK
             </h1>
           </div>
 
-          {/* Right column - Description and CTA */}
           <div className="max-w-md lg:pt-4">
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               Asta reads all property documents and highlights red flags,
@@ -22,6 +30,7 @@ const Hero = () => {
             <div className="mb-6">
               <Button
                 className="h-12 rounded-lg px-6 text-sm font-medium"
+                onClick={handleClickTryForFree}
                 asChild
               >
                 <a
@@ -51,7 +60,6 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Dashboard preview */}
         <div className="mt-12 max-w-6xl mx-auto">
           <div className="card-shadow rounded-xl overflow-hidden bg-card border border-border">
             <img
