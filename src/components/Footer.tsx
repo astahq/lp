@@ -14,9 +14,12 @@ const Footer = () => {
               AI-powered legal pack analysis for UK property investors.
             </p>
             <address className="text-sm text-background/60 leading-relaxed not-italic">
-              71-75 Shelton Street<br />
-              Covent Garden<br />
-              London<br />
+              71-75 Shelton Street
+              <br />
+              Covent Garden
+              <br />
+              London
+              <br />
               WC2H 9JQ
             </address>
           </div>
@@ -24,17 +27,37 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4 text-sm">Product</h4>
             <ul className="space-y-2.5 text-sm text-background/60">
-              <li><a href="#" className="hover:text-background transition-colors">Pricing</a></li>
-              <li><a href="#" className="hover:text-background transition-colors">Use Cases</a></li>
+              <li>
+                <a
+                  href="/pricing"
+                  className="hover:text-background transition-colors"
+                >
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/use-cases"
+                  className="hover:text-background transition-colors"
+                >
+                  Use Cases
+                </a>
+              </li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold mb-4 text-sm">Legal</h4>
             <ul className="space-y-2.5 text-sm text-background/60">
-              <li><span className="cursor-default">Privacy Policy</span></li>
-              <li><span className="cursor-default">Terms of Service</span></li>
-              <li><span className="cursor-default">Cookie Policy</span></li>
+              <li>
+                <span className="cursor-default">Privacy Policy</span>
+              </li>
+              <li>
+                <span className="cursor-default">Terms of Service</span>
+              </li>
+              <li>
+                <span className="cursor-default">Cookie Policy</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -44,11 +67,27 @@ const Footer = () => {
             <p className="text-sm text-background/40">
               © 2026 Asta. All rights reserved.
             </p>
-            <span className="text-sm text-background/40">Built in London 🎡💂🏼‍♂️🇬🇧</span>
+            <span className="text-sm text-background/40">
+              Built in London 🎡💂🏼‍♂️🇬🇧
+            </span>
           </div>
           <div className="flex items-center gap-6 text-sm text-background/60">
-            <a href="https://x.com/useastahq" target="_blank" rel="noopener noreferrer" className="hover:text-background transition-colors">Twitter</a>
-            <a href="https://www.linkedin.com/company/astahq/" target="_blank" rel="noopener noreferrer" className="hover:text-background transition-colors">LinkedIn</a>
+            <a
+              href="https://x.com/useastahq"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-background transition-colors"
+            >
+              Twitter
+            </a>
+            <a
+              href="https://www.linkedin.com/company/astahq/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-background transition-colors"
+            >
+              LinkedIn
+            </a>
           </div>
         </div>
       </div>
