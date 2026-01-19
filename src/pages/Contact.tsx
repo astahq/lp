@@ -6,45 +6,104 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Calendar, MessageSquare } from "lucide-react";
-import { useForm, ValidationError } from "@formspree/react";
 import ReCAPTCHA from "react-google-recaptcha";
+
+interface FormState {
+  submitting: boolean;
+  succeeded: boolean;
+  errors: Record<string, string[]>;
+  formErrors: string[];
+}
 
 const Contact = () => {
   const formId = import.meta.env.VITE_FORMSPREE_FORM_ID;
   const recaptchaSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [recaptchaToken, setRecaptchaToken] = useState<string>("");
+  const [state, setState] = useState<FormState>({
+    submitting: false,
+    succeeded: false,
+    errors: {},
+    formErrors: [],
+  });
 
   if (!formId || !recaptchaSiteKey) {
     throw new Error("Form ID or reCAPTCHA site key is not set");
   }
 
-  const [state, handleSubmit] = useForm(formId);
-
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!recaptchaToken) {
       return;
     }
 
+    setState({ submitting: true, succeeded: false, errors: {}, formErrors: [] });
+
     const form = e.currentTarget;
-    const hiddenInput = document.createElement("input");
-    hiddenInput.setAttribute("type", "hidden");
-    hiddenInput.setAttribute("name", "g-recaptcha-response");
-    hiddenInput.setAttribute("value", recaptchaToken);
-    form.appendChild(hiddenInput);
+    const formData = new FormData(form);
+    formData.set("g-recaptcha-response", recaptchaToken);
 
-    handleSubmit(e);
+    try {
+      const response = await fetch(`https://formspree.io/f/${formId}`, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: formData,
+      });
 
-    if (recaptchaRef.current) {
-      recaptchaRef.current.reset();
+      const data = await response.json();
+
+      if (response.ok) {
+        setState({ submitting: false, succeeded: true, errors: {}, formErrors: [] });
+        form.reset();
+        if (recaptchaRef.current) {
+          recaptchaRef.current.reset();
+        }
+        setRecaptchaToken("");
+      } else {
+        const fieldErrors: Record<string, string[]> = {};
+        const formErrors: string[] = [];
+
+        if (data.errors) {
+          data.errors.forEach((err: { field?: string; message: string }) => {
+            if (err.field) {
+              if (!fieldErrors[err.field]) {
+                fieldErrors[err.field] = [];
+              }
+              fieldErrors[err.field].push(err.message);
+            } else {
+              formErrors.push(err.message);
+            }
+          });
+        } else {
+          formErrors.push("Submission failed. Please try again.");
+        }
+
+        setState({
+          submitting: false,
+          succeeded: false,
+          errors: fieldErrors,
+          formErrors,
+        });
+      }
+    } catch (error) {
+      setState({
+        submitting: false,
+        succeeded: false,
+        errors: {},
+        formErrors: ["Network error. Please try again."],
+      });
     }
-    setRecaptchaToken("");
   };
 
   const onRecaptchaChange = (token: string | null) => {
     setRecaptchaToken(token || "");
+  };
+
+  const onRecaptchaExpired = () => {
+    setRecaptchaToken("");
   };
 
   return (
@@ -155,12 +214,11 @@ const Contact = () => {
                       placeholder="Your name"
                       required
                     />
-                    <ValidationError
-                      prefix="Name"
-                      field="name"
-                      errors={state.errors}
-                      className="text-sm text-destructive"
-                    />
+                    {state.errors.name && (
+                      <p className="text-sm text-destructive">
+                        {state.errors.name[0]}
+                      </p>
+                    )}
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="email">Email</Label>
@@ -171,12 +229,11 @@ const Contact = () => {
                       placeholder="you@example.com"
                       required
                     />
-                    <ValidationError
-                      prefix="Email"
-                      field="email"
-                      errors={state.errors}
-                      className="text-sm text-destructive"
-                    />
+                    {state.errors.email && (
+                      <p className="text-sm text-destructive">
+                        {state.errors.email[0]}
+                      </p>
+                    )}
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="subject">Subject</Label>
@@ -186,12 +243,11 @@ const Contact = () => {
                       placeholder="How can we help?"
                       required
                     />
-                    <ValidationError
-                      prefix="Subject"
-                      field="subject"
-                      errors={state.errors}
-                      className="text-sm text-destructive"
-                    />
+                    {state.errors.subject && (
+                      <p className="text-sm text-destructive">
+                        {state.errors.subject[0]}
+                      </p>
+                    )}
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="message">Message</Label>
@@ -202,18 +258,25 @@ const Contact = () => {
                       rows={5}
                       required
                     />
-                    <ValidationError
-                      prefix="Message"
-                      field="message"
-                      errors={state.errors}
-                      className="text-sm text-destructive"
-                    />
+                    {state.errors.message && (
+                      <p className="text-sm text-destructive">
+                        {state.errors.message[0]}
+                      </p>
+                    )}
                   </div>
+                  {state.formErrors.length > 0 && (
+                    <div className="text-sm text-destructive">
+                      {state.formErrors.map((error, i) => (
+                        <p key={i}>{error}</p>
+                      ))}
+                    </div>
+                  )}
                   <div className="flex justify-center">
                     <ReCAPTCHA
                       ref={recaptchaRef}
                       sitekey={recaptchaSiteKey}
                       onChange={onRecaptchaChange}
+                      onExpired={onRecaptchaExpired}
                     />
                   </div>
                   <Button
