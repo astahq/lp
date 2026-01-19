@@ -1,3 +1,4 @@
+import { FormEvent, useRef, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -6,16 +7,45 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Calendar, MessageSquare } from "lucide-react";
 import { useForm, ValidationError } from "@formspree/react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Contact = () => {
-  const formId = import.meta.env.VITE_FORMSPREE_FORM_ID || "";
+  const formId = import.meta.env.VITE_FORMSPREE_FORM_ID;
+  const recaptchaSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const [recaptchaToken, setRecaptchaToken] = useState<string>("");
 
-  if (!formId) {
-    throw new Error("Form ID is not set");
+  if (!formId || !recaptchaSiteKey) {
+    throw new Error("Form ID or reCAPTCHA site key is not set");
   }
 
-  const formUrl = `https://formspree.io/f/${formId}`;
   const [state, handleSubmit] = useForm(formId);
+
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!recaptchaToken) {
+      return;
+    }
+
+    const form = e.currentTarget;
+    const hiddenInput = document.createElement("input");
+    hiddenInput.setAttribute("type", "hidden");
+    hiddenInput.setAttribute("name", "g-recaptcha-response");
+    hiddenInput.setAttribute("value", recaptchaToken);
+    form.appendChild(hiddenInput);
+
+    handleSubmit(e);
+
+    if (recaptchaRef.current) {
+      recaptchaRef.current.reset();
+    }
+    setRecaptchaToken("");
+  };
+
+  const onRecaptchaChange = (token: string | null) => {
+    setRecaptchaToken(token || "");
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -116,12 +146,7 @@ const Contact = () => {
                   </p>
                 </div>
               ) : (
-                <form
-                  action={formUrl}
-                  method="POST"
-                  onSubmit={handleSubmit}
-                  className="space-y-5"
-                >
+                <form onSubmit={onSubmit} className="space-y-5">
                   <div className="space-y-2">
                     <Label htmlFor="name">Name</Label>
                     <Input
@@ -184,9 +209,16 @@ const Contact = () => {
                       className="text-sm text-destructive"
                     />
                   </div>
+                  <div className="flex justify-center">
+                    <ReCAPTCHA
+                      ref={recaptchaRef}
+                      sitekey={recaptchaSiteKey}
+                      onChange={onRecaptchaChange}
+                    />
+                  </div>
                   <Button
                     type="submit"
-                    disabled={state.submitting}
+                    disabled={state.submitting || !recaptchaToken}
                     className="w-full rounded-lg"
                   >
                     {state.submitting ? "Sending..." : "Send Message"}
