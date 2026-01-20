@@ -12,14 +12,14 @@ const faqs = [
       "Our AI has been trained on thousands of UK auction legal packs and achieves over 95% accuracy in identifying key clauses, risks, and fees. However, we always recommend consulting with a solicitor for final verification on properties you intend to bid on.",
   },
   {
-    question: "What types of documents can Asta analyze?",
+    question: "What types of documents can Asta analyse?",
     answer:
-      "Asta can analyze all standard auction legal pack documents including title registers, lease agreements, searches, property information forms, special conditions of sale, and more. We support PDF, DOC, and image formats.",
+      "Asta can analyse all standard auction legal pack documents including title registers, lease agreements, searches, property information forms, special conditions of sale, and more. We support PDF, DOC, and image formats.",
   },
   {
     question: "How long does the analysis take?",
     answer:
-      "Most legal packs are analyzed within 2-5 minutes, depending on the complexity and number of documents. You'll receive a comprehensive report as soon as the analysis is complete.",
+      "Most legal packs are analysed within 2-5 minutes, depending on the complexity and number of documents. You'll receive a comprehensive report as soon as the analysis is complete.",
   },
   {
     question: "Is my data secure?",

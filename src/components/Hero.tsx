@@ -17,7 +17,7 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div className="max-w-xl">
             <h1 className="text-4xl md:text-5xl lg:text-[56px] text-foreground hero-headline mb-6">
-              Instantly analyze and understand property legal packs in the UK
+              Instantly analyse and understand property legal packs in the UK
             </h1>
           </div>
 
