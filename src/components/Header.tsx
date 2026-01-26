@@ -1,11 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Menu, ChevronDown } from "lucide-react";
 import astaLogo from "@/assets/asta-logo.png";
 import { useState } from "react";
+import { getAllTools } from "@/tools/config";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const tools = getAllTools();
 
   const navLinks = [
     { href: "/use-cases", label: "Use Cases" },
@@ -21,7 +29,6 @@ const Header = () => {
           <span className="text-xl font-semibold text-foreground">Asta</span>
         </a>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <a
@@ -32,6 +39,39 @@ const Header = () => {
               {link.label}
             </a>
           ))}
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors text-sm font-medium outline-none">
+              Tools
+              <ChevronDown className="h-4 w-4" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-80">
+              {tools.map((tool) => {
+                const Icon = tool.icon;
+                return (
+                  <DropdownMenuItem 
+                    key={tool.id} 
+                    asChild 
+                    className="p-0 focus:bg-neutral-100 focus:text-foreground data-[highlighted]:bg-neutral-100 data-[highlighted]:text-foreground"
+                  >
+                    <a
+                      href={`/tools/${tool.slug}`}
+                      className="flex items-start gap-3 p-3 rounded-sm hover:bg-neutral-100 focus:bg-neutral-100 transition-colors cursor-pointer"
+                    >
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 flex-shrink-0">
+                        <Icon className="h-5 w-5 text-primary" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="font-medium text-sm text-foreground">{tool.name}</div>
+                        <div className="text-xs text-muted-foreground mt-0.5 line-clamp-2">
+                          {tool.description}
+                        </div>
+                      </div>
+                    </a>
+                  </DropdownMenuItem>
+                );
+              })}
+            </DropdownMenuContent>
+          </DropdownMenu>
           <Button
             variant="ghost"
             className="text-sm font-medium text-muted-foreground hover:text-foreground"
@@ -74,11 +114,35 @@ const Header = () => {
                     key={link.href}
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="text-foreground hover:text-primary transition-colors text-lg font-medium py-2"
+                    className="text-foreground hover:text-foreground transition-colors text-lg font-medium py-2"
                   >
                     {link.label}
                   </a>
                 ))}
+                <div className="pt-2 border-t border-border">
+                  <p className="text-sm font-semibold text-muted-foreground mb-3 px-2">Tools</p>
+                  {tools.map((tool) => {
+                    const Icon = tool.icon;
+                    return (
+                      <a
+                        key={tool.id}
+                        href={`/tools/${tool.slug}`}
+                        onClick={() => setOpen(false)}
+                        className="flex items-start gap-3 px-2 py-3 rounded-lg hover:bg-neutral-100 transition-colors mb-2"
+                      >
+                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 flex-shrink-0">
+                          <Icon className="h-5 w-5 text-primary" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="font-medium text-base text-foreground">{tool.name}</div>
+                          <div className="text-xs text-muted-foreground mt-0.5 line-clamp-2">
+                            {tool.description}
+                          </div>
+                        </div>
+                      </a>
+                    );
+                  })}
+                </div>
                 <a
                   href="https://cal.com/sefa-oruc-asta/15min?overlayCalendar=true"
                   target="_blank"
