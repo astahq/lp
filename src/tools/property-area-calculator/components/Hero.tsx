@@ -4,7 +4,9 @@ import heroBg from "@/assets/property-area-hero-bg.jpg";
 
 const Hero = () => {
   const scrollToCalculator = () => {
-    document.getElementById("calculator")?.scrollIntoView({ behavior: "smooth" });
+    document
+      .getElementById("calculator")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -24,23 +26,38 @@ const Hero = () => {
             <Ruler className="h-4 w-4" />
             UK Property Area Calculator
           </div>
-          
+
           <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
-            Calculate Your <span className="text-primary">Property Area</span> Instantly
+            Calculate Your <span className="text-primary">Property Area</span>{" "}
+            Instantly
           </h1>
-          
+
           <p className="mt-6 text-lg text-muted-foreground md:text-xl">
-            Accurately measure your property's total floor area in square metres and square feet. 
-            Get instant estimates for room sizes, total area, and property valuations.
+            Accurately measure your property's total floor area in square metres
+            and square feet. Get instant estimates for room sizes, total area,
+            and property valuations.
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <Button size="lg" onClick={scrollToCalculator} className="gap-2 text-base">
+            <Button
+              size="lg"
+              onClick={scrollToCalculator}
+              className="gap-2 text-base"
+            >
               Start Calculating
               <ArrowDown className="h-4 w-4" />
             </Button>
-            <Button size="lg" variant="outline" asChild className="gap-2 text-base">
-              <a href="https://app.useasta.com/" target="_blank" rel="noopener noreferrer">
+            <Button
+              size="lg"
+              variant="soft"
+              asChild
+              className="gap-2 text-base"
+            >
+              <a
+                href="https://app.useasta.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Review Your Property for Free
               </a>
             </Button>
@@ -53,7 +70,9 @@ const Hero = () => {
               </div>
               <div>
                 <p className="text-sm font-semibold">Accurate</p>
-                <p className="text-xs text-muted-foreground">Precise calculations</p>
+                <p className="text-xs text-muted-foreground">
+                  Precise calculations
+                </p>
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -62,7 +81,9 @@ const Hero = () => {
               </div>
               <div>
                 <p className="text-sm font-semibold">Instant</p>
-                <p className="text-xs text-muted-foreground">Real-time results</p>
+                <p className="text-xs text-muted-foreground">
+                  Real-time results
+                </p>
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -71,7 +92,9 @@ const Hero = () => {
               </div>
               <div>
                 <p className="text-sm font-semibold">Complete</p>
-                <p className="text-xs text-muted-foreground">All rooms included</p>
+                <p className="text-xs text-muted-foreground">
+                  All rooms included
+                </p>
               </div>
             </div>
           </div>
