@@ -1,211 +1,143 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check } from "lucide-react";
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Check } from "lucide-react";
 
-const pricingFaqs = [
+const tiers = [
   {
-    question: "How does the Pay-Per-Report pricing work?",
-    answer:
-      "Each report costs £29 (VAT included). You only pay when you need an analysis - no subscriptions or commitments required. Simply upload your legal pack and receive your comprehensive report within minutes.",
+    name: "Starter",
+    price: "£99",
+    period: "/mo",
+    description: "Perfect for individual & small solicitors",
+    features: [
+      "100 packs/month",
+      "All document types",
+      "Summary with key risks & red flags",
+      "Downloadable PDF report",
+      "Property-specific chatbot",
+      "Email support",
+      "Dashboard access",
+    ],
+    cta: "Start 14 Days Free Trial",
+    popular: false,
   },
   {
-    question: "Can I get a refund if I'm not satisfied?",
-    answer:
-      "Yes, we offer a satisfaction guarantee. If you're not happy with your report, contact our support team within 7 days of purchase and we'll review your case for a full refund.",
+    name: "Professional",
+    price: "£249",
+    period: "/mo",
+    description: "For growing practices with higher volume",
+    features: [
+      "300 packs/month",
+      "Everything in Starter",
+      "Priority support",
+      "API access",
+      "Case management integrations",
+    ],
+    cta: "Start 14 Days Free Trial",
+    popular: true,
   },
   {
-    question: "What's included in the Enterprise plan?",
-    answer:
-      "The Enterprise plan includes bulk analysis capabilities, team dashboards, API access, custom integrations, and priority support. Pricing is tailored based on your volume and specific needs.",
-  },
-  {
-    question: "How do I get started with the Enterprise plan?",
-    answer:
-      "Book a demo with our team and we'll discuss your requirements, provide a custom quote, and help you get set up with a dedicated onboarding process.",
-  },
-  {
-    question: "Is my payment information secure?",
-    answer:
-      "Absolutely. We use industry-standard encryption and never store your full payment details on our servers. All transactions are PCI-DSS compliant.",
+    name: "Enterprise",
+    price: "Custom",
+    period: "",
+    description: "For large firms with bespoke requirements",
+    features: [
+      "Unlimited packs",
+      "Everything in Professional",
+      "White-label option",
+      "Dedicated account manager",
+      "Custom SLA",
+      "Custom integrations",
+    ],
+    cta: "Contact Sales",
+    popular: false,
   },
 ];
 
 const Pricing = () => {
-  const payPerReportFeatures = [
-    "One-time detailed legal pack analysis",
-    "Summary with key risks and red flags",
-    "Downloadable PDF Report",
-    "Property-specific chatbot for follow-up questions",
-    "Mail Support",
-  ];
-
-  const enterpriseFeatures = [
-    "Bulk legal pack analysis",
-    "Team dashboard and report sharing",
-    "API access and workflow integrations",
-    "Custom integrations",
-    "Priority support",
-  ];
-
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main className="pt-32 pb-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Pricing
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Choose the plan that works best for you
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Pay-Per-Report Plan */}
-            <Card className="relative border-2 border-border bg-card">
-              <CardHeader className="pb-4">
-                <CardTitle className="text-2xl font-bold text-foreground">
-                  Pay-Per-Report
-                </CardTitle>
-                <p className="text-muted-foreground text-sm mt-2">
-                  Perfect for individual investors who want instant insights
-                  before bidding.
-                </p>
-              </CardHeader>
-              <CardContent>
-                <div className="mb-6">
-                  <span className="text-4xl font-bold text-foreground">
-                    £29
-                  </span>
-                  <span className="text-muted-foreground ml-2">
-                    (VAT Included)
-                  </span>
-                </div>
-
-                <div className="mb-8">
-                  <p className="text-sm font-medium text-foreground mb-4">
-                    What's included:
-                  </p>
-                  <ul className="space-y-3">
-                    {payPerReportFeatures.map((feature, index) => (
-                      <li key={index} className="flex items-start gap-3">
-                        <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground">
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <Button
-                  className="w-full h-12 rounded-lg text-sm font-medium"
-                  asChild
-                >
-                  <a
-                    href="https://app.useasta.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Get Started for Free
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Enterprise Plan */}
-            <Card className="relative border-2 border-primary bg-card">
-              <CardHeader className="pb-4">
-                <CardTitle className="text-2xl font-bold text-foreground">
-                  Enterprise
-                </CardTitle>
-                <p className="text-muted-foreground text-sm mt-2">
-                  Ideal for solicitors, auction houses, property management
-                  companies, and high-volume investors needing tailored access.
-                </p>
-              </CardHeader>
-              <CardContent>
-                <div className="mb-6">
-                  <span className="text-4xl font-bold text-foreground">
-                    Custom Pricing
-                  </span>
-                </div>
-
-                <div className="mb-8">
-                  <p className="text-sm font-medium text-foreground mb-4">
-                    What's included:
-                  </p>
-                  <ul className="space-y-3">
-                    {enterpriseFeatures.map((feature, index) => (
-                      <li key={index} className="flex items-start gap-3">
-                        <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground">
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <Button
-                  variant="outline"
-                  className="w-full h-12 rounded-lg text-sm font-medium"
-                  asChild
-                >
-                  <a
-                    href="https://cal.com/sefa-oruc-asta/15min?overlayCalendar=true"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Book a Demo
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* FAQ Section */}
-          <section className="mt-24 max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <span className="section-label mb-3 block">FAQ</span>
-              <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
-                Frequently asked questions
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Everything you need to know about pricing and billing.
-              </p>
-            </div>
-
-            <Accordion type="single" collapsible className="space-y-3">
-              {pricingFaqs.map((faq, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index}`}
-                  className="bg-card border border-border rounded-xl px-6 data-[state=open]:shadow-sm"
-                >
-                  <AccordionTrigger className="text-left text-foreground font-medium hover:no-underline py-5">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pb-5">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </section>
+    <section id="pricing" className="py-20 md:py-28 bg-muted/30">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
+            Simple, Transparent Pricing
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Choose the plan that fits your firm's needs. All plans include a
+            14-day free trial.
+          </p>
         </div>
-      </main>
-      <Footer />
-    </div>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {tiers.map((tier) => (
+            <Card
+              key={tier.name}
+              className={`relative flex flex-col ${
+                tier.popular
+                  ? "border-primary shadow-lg scale-105 z-10"
+                  : "border-border"
+              }`}
+            >
+              {tier.popular && (
+                <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground">
+                  Most Popular
+                </Badge>
+              )}
+              <CardHeader className="text-center pb-4">
+                <CardTitle className="text-xl font-semibold text-foreground">
+                  {tier.name}
+                </CardTitle>
+                <CardDescription className="text-muted-foreground">
+                  {tier.description}
+                </CardDescription>
+                <div className="mt-4">
+                  <span className="text-4xl font-bold text-foreground">
+                    {tier.price}
+                  </span>
+                  <span className="text-muted-foreground">{tier.period}</span>
+                </div>
+              </CardHeader>
+              <CardContent className="flex-1">
+                <ul className="space-y-3">
+                  {tier.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <span className="text-muted-foreground">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+              <CardFooter>
+                <Button
+                  className="w-full h-11 rounded-lg font-medium"
+                  variant={tier.popular ? "default" : "outline"}
+                  asChild
+                >
+                  <a
+                    href={
+                      tier.name === "Enterprise"
+                        ? "mailto:hello@useasta.com"
+                        : "https://app.useasta.com/"
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {tier.cta}
+                  </a>
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
