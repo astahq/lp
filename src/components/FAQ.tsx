@@ -9,32 +9,43 @@ const faqs = [
   {
     question: "How accurate is the AI analysis?",
     answer:
-      "Our AI has been trained on thousands of UK auction legal packs and achieves over 95% accuracy in identifying key clauses, risks, and fees. However, we always recommend consulting with a solicitor for final verification on properties you intend to bid on.",
+      "Our AI has been trained on thousands of UK conveyancing legal packs and achieves over 95% accuracy in identifying key clauses, risks, and compliance issues. The analysis is designed to assist your review process—final professional judgment always remains with the solicitor.",
   },
   {
-    question: "What types of documents can Asta analyse?",
+    question: "What document types does Asta support?",
     answer:
-      "Asta can analyse all standard auction legal pack documents including title registers, lease agreements, searches, property information forms, special conditions of sale, and more. We support PDF, DOC, and image formats.",
+      "Asta analyzes all standard conveyancing documents including Title Registers, Title Plans, Leases, Property Information Forms, Fixtures & Fittings Forms, Local Authority Searches, Environmental Searches, Water & Drainage Searches, Chancel Repair Liability, Contracts, and Special Conditions. We support PDF, DOC, DOCX, and scanned image formats.",
   },
   {
-    question: "How long does the analysis take?",
+    question:
+      "How does Asta integrate with our existing case management system?",
     answer:
-      "Most legal packs are analysed within 2-5 minutes, depending on the complexity and number of documents. You'll receive a comprehensive report as soon as the analysis is complete.",
+      "Asta offers API access on Professional and Enterprise plans, enabling seamless integration with popular case management systems including LEAP, Clio, Smokeball, and others. Our team can assist with custom integrations for Enterprise clients.",
   },
   {
     question: "Is my data secure?",
     answer:
-      "Absolutely. We use end-to-end encryption for all document uploads and storage. Your data is processed securely and never shared with third parties. We comply with GDPR and UK data protection regulations.",
+      "Yes. We take data security extremely seriously. All documents are encrypted in transit (TLS 1.3) and at rest (AES-256). We're fully GDPR compliant, UK data-resident, and undergo regular security audits. Data is never used to train AI models or shared with third parties.",
   },
   {
-    question: "Can I ask questions about specific clauses?",
+    question: "How is our client data protected?",
     answer:
-      "Yes! Our AI Legal Assistant allows you to ask natural language questions about any part of your legal pack. Simply type your question and get instant, contextual answers.",
+      "We take data security extremely seriously. All documents are encrypted in transit (TLS 1.3) and at rest (AES-256). We're fully GDPR compliant, UK data-resident, and undergo regular security audits. Data is never used to train AI models or shared with third parties.",
   },
   {
-    question: "What if I need to cancel my subscription?",
+    question: "Can multiple fee earners access the same analysis?",
     answer:
-      "You can cancel your subscription at any time with no questions asked. There are no long-term contracts or cancellation fees. Your access will continue until the end of your billing period.",
+      "Yes. All plans include dashboard access for your team. Professional and Enterprise plans offer unlimited users with role-based permissions, allowing partners, associates, and paralegals appropriate access levels.",
+  },
+  {
+    question: "What happens after the 14-day free trial?",
+    answer:
+      "After your trial, you can choose the plan that fits your firm's volume. There's no automatic billing—you'll only be charged once you actively select a plan. If you decide not to continue, your data will be securely deleted after 30 days.",
+  },
+  {
+    question: "How quickly can we get started?",
+    answer:
+      "Immediately. Sign up takes under 2 minutes, and you can upload your first legal pack right away. No IT setup, no lengthy onboarding—just upload documents and receive your analysis within 5 minutes.",
   },
 ];
 
