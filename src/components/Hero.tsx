@@ -6,7 +6,13 @@ import dashboardImage from "@/assets/dashboard-preview.jpg";
 const Hero = () => {
   const posthog = usePostHog();
 
-  function handleClickTryForFree() {
+  function handleClickStartFreeTrial() {
+    posthog.capture("start_free_trial_button_clicked", {
+      button_text: "Start Free Trial",
+    });
+  }
+
+  function handleClickBookDemo() {
     posthog.capture("book_a_demo_button_clicked", {
       button_text: "Book a Demo",
     });
@@ -34,7 +40,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Button
               className="h-12 rounded-lg px-8 text-base font-medium"
-              onClick={handleClickTryForFree}
+              onClick={handleClickStartFreeTrial}
               asChild
             >
               <a
@@ -48,6 +54,7 @@ const Hero = () => {
             <Button
               variant="soft"
               className="h-12 rounded-lg px-8 text-base font-medium"
+              onClick={handleClickBookDemo}
               asChild
             >
               <a
