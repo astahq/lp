@@ -1,12 +1,16 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Quote from "@/components/Quote";
 import HowItWorks from "@/components/HowItWorks";
-import BuiltFor from "@/components/BuiltFor";
 import Features from "@/components/Features";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import Problem from "@/components/Problem";
+import KeyFeatures from "@/components/KeyFeatures";
+import UseCases from "./UseCases";
+import ROICalculator from "@/components/ROICalculator";
+import Pricing from "./Pricing";
+import TrustedSecure from "@/components/TrustedSecure";
 
 const Index = () => {
   return (
@@ -14,11 +18,15 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <Quote />
-        <Features />
+        <Problem />
         <HowItWorks />
-        <BuiltFor />
+        <Features />
+        <KeyFeatures />
+        <UseCases />
+        <ROICalculator />
+        <Pricing />
         <CTA />
+        <TrustedSecure />
         <FAQ />
         <Footer />
       </main>
