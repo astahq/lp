@@ -1,114 +1,152 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
-import uploadLegalPackImg from "@/assets/upload-legal-pack.png";
-import aiAnalysisImg from "@/assets/ai-analysis.png";
-import riskReportImg from "@/assets/risk-report.png";
+import { FileUp, Brain, FileText, CheckCircle } from "lucide-react";
+import uploadLegalPackImg from "@/assets/features-first.jpg";
+import aiAnalysisImg from "@/assets/features-second.png";
+import riskReportImg from "@/assets/features-third.jpg";
 
 const features = [
   {
     id: "upload",
     title: "Upload Legal Pack",
     description:
-      "Just drag & drop the entire auction pack (PDFs, Word, scans – doesn't matter).",
+      "Drag and drop entire legal packs — PDFs, Word docs, scanned documents. Asta handles Title Deeds, Leases, Searches, Contracts, and more.",
     image: uploadLegalPackImg,
+    icon: FileUp,
   },
   {
     id: "analysis",
-    title: "AI Analysis",
+    title: "AI-Powered Analysis",
     description:
-      "Asta scans every document, identifying risks, covenants, and key clauses.",
+      "Our AI reviews all documents simultaneously, cross-referencing clauses and identifying discrepancies across the entire pack.",
     image: aiAnalysisImg,
+    icon: Brain,
   },
   {
     id: "report",
-    title: "Get Risk Report",
+    title: "Comprehensive Report",
     description:
-      'Clear "Proceed / Walk Away" recommendation and exact risk locations.',
+      "Receive a detailed risk assessment with flagged issues, their exact locations, and actionable recommendations for your client.",
     image: riskReportImg,
+    icon: FileText,
   },
 ];
+
+const CYCLE_INTERVAL = 4000;
+
 const Features = () => {
   const [activeTab, setActiveTab] = useState("upload");
+  const [isPaused, setIsPaused] = useState(false);
   const activeFeature = features.find((f) => f.id === activeTab);
+
+  const cycleToNext = useCallback(() => {
+    const currentIndex = features.findIndex((f) => f.id === activeTab);
+    const nextIndex = (currentIndex + 1) % features.length;
+    setActiveTab(features[nextIndex].id);
+  }, [activeTab]);
+
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(cycleToNext, CYCLE_INTERVAL);
+    return () => clearInterval(interval);
+  }, [cycleToNext, isPaused]);
+
+  const handleTabClick = (id: string) => {
+    setActiveTab(id);
+    setIsPaused(true);
+    setTimeout(() => setIsPaused(false), 10000);
+  };
+
   return (
     <section id="solutions" className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="section-label mb-3 block">FEATURES</span>
+          <span className="section-label mb-3 block">HOW IT WORKS</span>
           <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
-            Save your money and time bidding on property!
+            From upload to insight in 3 simple steps
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto"></p>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Streamline your conveyancing workflow with AI-powered document
+            analysis
+          </p>
         </div>
 
         {/* Tabs */}
-        <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-12">
-          {features.map((feature, index) => (
-            <div key={feature.id} className="flex flex-col items-center gap-2">
-              <span className="text-xs font-semibold text-primary tracking-wider">
-                STEP {index + 1}
-              </span>
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
               <button
-                onClick={() => setActiveTab(feature.id)}
-                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
+                key={feature.id}
+                onClick={() => handleTabClick(feature.id)}
+                className={`flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-medium transition-all border ${
                   activeTab === feature.id
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-muted-foreground hover:bg-muted/80"
+                    ? "bg-primary text-primary-foreground border-primary"
+                    : "bg-card text-muted-foreground border-border hover:border-primary/50"
                 }`}
               >
+                <span className="w-6 h-6 rounded-full bg-background/20 flex items-center justify-center text-xs font-bold">
+                  {index + 1}
+                </span>
+                <Icon className="w-4 h-4" />
                 {feature.title}
               </button>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Content */}
         {activeFeature && (
-          <div className="max-w-6xl mx-auto">
-            <div className="mb-8">
-              <h3 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
-                {activeFeature.title}
-              </h3>
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <activeFeature.icon className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-semibold text-foreground">
+                  {activeFeature.title}
+                </h3>
+              </div>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 {activeFeature.description}
               </p>
-              <Button
-                variant="link"
-                className="p-0 h-auto text-primary font-medium"
-                asChild
-              >
+              <ul className="space-y-3 mb-6">
+                <li className="flex items-center gap-2 text-muted-foreground">
+                  <CheckCircle className="w-5 h-5 text-primary" />
+                  Supports all common document formats
+                </li>
+                <li className="flex items-center gap-2 text-muted-foreground">
+                  <CheckCircle className="w-5 h-5 text-primary" />
+                  Secure, encrypted document handling
+                </li>
+                <li className="flex items-center gap-2 text-muted-foreground">
+                  <CheckCircle className="w-5 h-5 text-primary" />
+                  GDPR compliant processing
+                </li>
+              </ul>
+              <Button className="rounded-lg px-6" asChild>
                 <a
-                  href="https://app.useasta.com"
+                  href="https://app.useasta.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Upload Your Legal Pack →
+                  Start Free Trial →
                 </a>
               </Button>
             </div>
-            <div className="bg-muted rounded-2xl overflow-hidden shadow-lg border border-border">
+            <div className="bg-muted rounded-xl overflow-hidden border border-border">
               <img
                 src={activeFeature.image}
                 alt={activeFeature.title}
-                className="w-full h-auto object-contain"
+                className="w-full h-auto object-cover"
               />
             </div>
           </div>
         )}
-
-        <div className="mt-12 text-center">
-          <Button className="h-12 rounded-lg px-8 text-sm font-medium" asChild>
-            <a
-              href="https://app.useasta.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Get Started for Free
-            </a>
-          </Button>
-        </div>
       </div>
     </section>
   );
 };
+
 export default Features;
