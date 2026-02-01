@@ -1,3 +1,6 @@
+import astaLogo from "@/assets/asta-logo.png";
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer className="py-12 bg-foreground text-background">
@@ -5,46 +8,17 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <svg
-                width="28"
-                height="28"
-                viewBox="0 0 32 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  width="32"
-                  height="32"
-                  rx="8"
-                  fill="hsl(var(--primary))"
-                />
-                <path
-                  d="M10 18V23H14V20H18V23H22V18"
-                  stroke="white"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M8 18L16 11L24 18"
-                  stroke="white"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M16 15L16 11M16 11L13 14M16 11L19 14"
-                  stroke="white"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <img src={astaLogo as string} alt="Asta Logo" className="w-7 h-7" />
               <span className="text-lg font-semibold">Asta</span>
             </div>
-            <p className="text-sm text-background/60 leading-relaxed">
+            <p className="text-sm text-background/60 leading-relaxed mb-4">
               AI-powered legal pack analysis for UK solicitors and conveyancing
               firms.
+            </p>
+            <p className="text-sm text-background/60 leading-relaxed">
+              71-75 Shelton Street<br />
+              Covent Garden<br />
+              London WC2H 9JQ
             </p>
           </div>
 
@@ -132,12 +106,12 @@ const Footer = () => {
             © {new Date().getFullYear()} Asta. All rights reserved.
           </p>
           <div className="flex items-center gap-6 text-sm text-background/60">
-            <a href="#" className="hover:text-background transition-colors">
+            <Link to="https://x.com/useastahq" className="hover:text-background transition-colors">
               Twitter
-            </a>
-            <a href="#" className="hover:text-background transition-colors">
+            </Link>
+            <Link to="https://www.linkedin.com/company/astahq/about/?viewAsMember=true" className="hover:text-background transition-colors">
               LinkedIn
-            </a>
+            </Link>
           </div>
         </div>
       </div>
