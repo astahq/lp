@@ -38,18 +38,25 @@ const Hero = () => {
               asChild
             >
               <a
-                href="https://cal.com/sefa-oruc-asta/15min"
+                href="https://app.useasta.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Book a Demo
+                14 Days Free Trial
               </a>
             </Button>
             <Button
               variant="soft"
               className="h-12 rounded-lg px-8 text-base font-medium"
+              asChild
             >
-              See How It Works
+              <a
+                href="https://cal.com/sefa-oruc-asta/15min"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+              Book a Demo
+              </a>
             </Button>
           </div>
 
