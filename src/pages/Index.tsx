@@ -11,8 +11,11 @@ import UseCases from "./UseCases";
 import ROICalculator from "@/components/ROICalculator";
 import Pricing from "./Pricing";
 import TrustedSecure from "@/components/TrustedSecure";
+import { useScrollToHash } from "@/hooks/useScrollToHash";
 
 const Index = () => {
+  useScrollToHash();
+
   return (
     <div className="min-h-screen bg-background">
       <Header />

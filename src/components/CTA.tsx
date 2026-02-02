@@ -49,7 +49,7 @@ const CTA = () => {
             </span>
             <span className="flex items-center gap-2">
               <CheckCircle className="w-4 h-4" />
-              SRA compliant
+              GDPR compliant
             </span>
           </div>
         </div>
