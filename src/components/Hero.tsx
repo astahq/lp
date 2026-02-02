@@ -1,21 +1,27 @@
 import { Button } from "@/components/ui/button";
 import { Clock, FileCheck, Shield } from "lucide-react";
 import { usePostHog } from "posthog-js/react";
+import { useCookieConsent } from "@/hooks/useCookieConsent";
 import dashboardImage from "@/assets/dashboard-preview.jpg";
 
 const Hero = () => {
   const posthog = usePostHog();
+  const { hasConsented } = useCookieConsent();
 
   function handleClickStartFreeTrial() {
-    posthog.capture("start_free_trial_button_clicked", {
-      button_text: "Start Free Trial",
-    });
+    if (hasConsented) {
+      posthog.capture("start_free_trial_button_clicked", {
+        button_text: "Start Free Trial",
+      });
+    }
   }
 
   function handleClickBookDemo() {
-    posthog.capture("book_a_demo_button_clicked", {
-      button_text: "Book a Demo",
-    });
+    if (hasConsented) {
+      posthog.capture("book_a_demo_button_clicked", {
+        button_text: "Book a Demo",
+      });
+    }
   }
 
   return (
@@ -78,7 +84,7 @@ const Hero = () => {
             </span>
             <span className="flex items-center gap-2">
               <Shield className="w-4 h-4 text-primary" />
-              SRA compliant
+              GDPR compliant
             </span>
           </div>
         </div>

@@ -6,7 +6,8 @@ import { PostHogProvider } from "posthog-js/react";
 
 const options = {
   api_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST,
-  defaults: "2025-11-30",
+  opt_out_capturing_by_default: true,
+  persistence: "localStorage+cookie" as const,
 } as const;
 
 createRoot(document.getElementById("root")!).render(
