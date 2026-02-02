@@ -23,9 +23,9 @@ const Header = () => {
   const [toolsOpen, setToolsOpen] = useState(false);
 
   const navLinks = [
-    { href: "#solutions", label: "Solutions" },
-    { href: "#pricing", label: "Pricing" },
-    { href: "#faqs", label: "FAQs" },
+    { href: "/#solutions", label: "Solutions" },
+    { href: "/#pricing", label: "Pricing" },
+    { href: "/#faqs", label: "FAQs" },
     { href: "/contact", label: "Contact" },
   ];
 

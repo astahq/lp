@@ -20,7 +20,7 @@ const badges = [
 
 const TrustedSecure = () => {
   return (
-    <section className="py-12 md:py-16 bg-background">
+    <section id="trusted" className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-3xl font-semibold text-foreground text-center mb-8">
           Trusted & Secure

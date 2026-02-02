@@ -26,23 +26,23 @@ const Footer = () => {
             <h4 className="font-semibold mb-4 text-sm">Product</h4>
             <ul className="space-y-2.5 text-sm text-background/60">
               <li>
-                <a href="#" className="hover:text-background transition-colors">
+                <a href="/#solutions" className="hover:text-background transition-colors">
                   Features
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-background transition-colors">
+                <a href="/#pricing" className="hover:text-background transition-colors">
                   Pricing
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-background transition-colors">
+                <a href="/#trusted" className="hover:text-background transition-colors">
                   Security
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-background transition-colors">
-                  Integrations
+                <a href="/#how-it-works" className="hover:text-background transition-colors">
+                  How It Works
                 </a>
               </li>
             </ul>
@@ -52,22 +52,12 @@ const Footer = () => {
             <h4 className="font-semibold mb-4 text-sm">Company</h4>
             <ul className="space-y-2.5 text-sm text-background/60">
               <li>
-                <a href="#" className="hover:text-background transition-colors">
-                  About
+                <a href="/#faqs" className="hover:text-background transition-colors">
+                  FAQs
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-background transition-colors">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-background transition-colors">
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-background transition-colors">
+                <a href="/contact" className="hover:text-background transition-colors">
                   Contact
                 </a>
               </li>
@@ -78,23 +68,13 @@ const Footer = () => {
             <h4 className="font-semibold mb-4 text-sm">Legal</h4>
             <ul className="space-y-2.5 text-sm text-background/60">
               <li>
-                <a href="#" className="hover:text-background transition-colors">
+                <a href="/privacy" className="hover:text-background transition-colors">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-background transition-colors">
+                <a href="/terms" className="hover:text-background transition-colors">
                   Terms of Service
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-background transition-colors">
-                  GDPR
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-background transition-colors">
-                  Security
                 </a>
               </li>
             </ul>

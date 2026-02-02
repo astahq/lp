@@ -29,7 +29,7 @@ const capabilities = [
 
 const HowItWorks = () => {
   return (
-    <section className="py-20 md:py-28 bg-muted/30">
+    <section id="how-it-works" className="py-20 md:py-28 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <span className="section-label mb-3 block">CAPABILITIES</span>
