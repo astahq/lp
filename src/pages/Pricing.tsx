@@ -17,11 +17,11 @@ const tiers = [
     period: "/mo",
     description: "Perfect for individual & small solicitors",
     features: [
-      "100 packs/month",
+      "50 packs/month",
       "All document types",
       "Summary with key risks & red flags",
       "Downloadable PDF report",
-      "Property-specific chatbot",
+      "Ask questions about any document",
       "Email support",
       "Dashboard access",
     ],
@@ -34,7 +34,7 @@ const tiers = [
     period: "/mo",
     description: "For growing practices with higher volume",
     features: [
-      "300 packs/month",
+      "150 packs/month",
       "Everything in Starter",
       "Priority support",
       "API access",

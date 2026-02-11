@@ -34,7 +34,7 @@ const HowItWorks = () => {
         <div className="text-center mb-16">
           <span className="section-label mb-3 block">CAPABILITIES</span>
           <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
-            Everything you need to review legal packs efficiently
+            Everything you need to review property documents efficiently 
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Asta analyzes all document types in a conveyancing pack, providing

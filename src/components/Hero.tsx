@@ -33,9 +33,9 @@ const Hero = () => {
             Trusted by UK Property Solicitors
           </div>
 
-          <h1 className="text-2xl md:text-5xl lg:text-[56px] text-foreground hero-headline mb-6">
-            Review legal packs in minutes <br />
-            <span className="text-primary">not hours</span>
+          <h1 className="text-2xl md:text-5xl lg:text-[50px] text-foreground hero-headline mb-6">
+          Review property documents <br /> in minutes,
+            <span className="text-primary"> not hours</span>
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-2xl mx-auto">

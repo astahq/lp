@@ -8,9 +8,9 @@ import riskReportImg from "@/assets/features-third.jpg";
 const features = [
   {
     id: "upload",
-    title: "Upload Legal Pack",
+    title: "Upload Property Documents",
     description:
-      "Drag and drop entire legal packs — PDFs, Word docs, scanned documents. Asta handles Title Deeds, Leases, Searches, Contracts, and more.",
+      "Drag and drop entire property documents — PDFs, Word docs, scanned documents. Asta handles Title Deeds, Leases, Searches, Contracts, and more.",
     image: uploadLegalPackImg,
     icon: FileUp,
   },

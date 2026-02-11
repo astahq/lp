@@ -2,7 +2,7 @@ import { Clock, PoundSterling, Users, AlertCircle } from "lucide-react";
 const painPoints = [
   {
     icon: Clock,
-    text: "3-4 hours per legal pack review",
+    text: "3-4 hours per property documents review",
   },
   {
     icon: PoundSterling,

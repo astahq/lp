@@ -12,8 +12,7 @@ const Footer = () => {
               <span className="text-lg font-semibold">Asta</span>
             </div>
             <p className="text-sm text-background/60 leading-relaxed mb-4">
-              AI-powered legal pack analysis for UK solicitors and conveyancing
-              firms.
+            AI-powered document assistant for UK solicitors and conveyancing firms.
             </p>
             <p className="text-sm text-background/60 leading-relaxed">
               71-75 Shelton Street<br />
