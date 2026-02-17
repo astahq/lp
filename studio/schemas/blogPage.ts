@@ -1,9 +1,5 @@
 import { defineField, defineType } from 'sanity';
 
-/**
- * Singleton document that controls the Blog list page hero section.
- * Create exactly one document of this type in the Studio.
- */
 export default defineType({
   name: 'blogPage',
   title: 'Blog Page Settings',
